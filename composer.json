@@ -1,0 +1,26 @@
+{
+    "name": "cmarfil/pending-migration-advisor",
+    "description": "Laravel pending migrations advisor.",
+    "homepage": "https://github.com/cmarfil/laravel-pending-migrations-advisor",
+    "license": "MIT",
+	"keywords": ["laravel", "pending", "migrations", "migration", "advisor"],
+    "authors": [
+        {
+            "name": "cmarfil",
+            "email": "cristian.marfil@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Cmarfil\\PendingMigrationAdvisor\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
