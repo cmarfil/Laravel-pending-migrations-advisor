@@ -1,5 +1,5 @@
 # Laravel pending migration advisor
-Simple Laravel pending migrations advisor, display a warning popup when there are pending migrations to run.
+Simple Laravel pending migrations advisor, display a warning popup when are pending migrations to run.
 
 ![alt tag](http://i60.tinypic.com/33l2t0o.jpg)
 
