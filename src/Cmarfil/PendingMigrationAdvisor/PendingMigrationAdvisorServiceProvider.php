@@ -26,7 +26,7 @@ class PendingMigrationAdvisorServiceProvider extends ServiceProvider {
             $app['router']->after(
                 function ($request, $response) use ($app) {
                     /** @var LaravelDebugbar $debugbar */
-                    $migrationAdvisor = $app['Cmarfil\PendingMigrationAdvisor\migrationAdvisor'];
+                    $migrationAdvisor = $app['Cmarfil\PendingMigrationAdvisor\MigrationAdvisor'];
                     $migrationAdvisor->modifyResponse($request, $response);
                 }
             );
