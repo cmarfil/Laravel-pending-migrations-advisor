@@ -2,7 +2,7 @@
 
 Simple Laravel pending migrations advisor, display a warning popup when are pending migrations to run.
 
-![alt tag](http://i60.tinypic.com/33l2t0o.jpg)
+![alt tag](http://i61.tinypic.com/zo9h7q.png)
 
 ### For Laravel 4, please use the [L4 branch](https://github.com/cmarfil/Laravel-pending-migrations-advisor/tree/L4)!
 
