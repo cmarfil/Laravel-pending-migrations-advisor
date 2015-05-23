@@ -36,9 +36,9 @@ class MigrationAdvisor {
      */
     public function __construct()
     {
-        $this->migrations_path = \Config::get('pending-migration-advisor::migrations_path');
+        $this->migrations_path = \Config::get('pending-migration-advisor.migrations_path');
         $this->migration_table = \Config::get('database.migrations');
-		$this->enabled = \Config::get('pending-migration-advisor::enabled');
+        $this->enabled = \Config::get('pending-migration-advisor.enabled');
     }
 
 
@@ -82,7 +82,7 @@ class MigrationAdvisor {
 		// they all start with a timestamp this should give us the migrations in
 		// the order they were actually created by the application developers.
 		sort($files);
-
+                
 		return $files;
 	}
 

@@ -17,20 +17,26 @@ class PendingMigrationAdvisorServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot()
-	{
-		$app = $this->app;
+	{            
+            $configPath = __DIR__.'/../../config/config.php';
 
-		$this->package('cmarfil/pending-migration-advisor');
+            // Publish config.
+            $this->publishes([
+                $configPath => config_path('pending-migration-advisor.php'),
+            ]);        
+            
+            $app = $this->app;
+            //$this->package('cmarfil/pending-migration-advisor');            
 
-		if(!$app->runningInConsole()){
-            $app['router']->after(
-                function ($request, $response) use ($app) {
-                    /** @var LaravelDebugbar $debugbar */
-                    $migrationAdvisor = $app['Cmarfil\PendingMigrationAdvisor\MigrationAdvisor'];
-                    $migrationAdvisor->modifyResponse($request, $response);
-                }
-            );
-		}
+            if(!$app->runningInConsole()){
+                $app['router']->after(
+                    function ($request, $response) use ($app) {
+                        /** @var LaravelDebugbar $debugbar */
+                        $migrationAdvisor = $app['Cmarfil\PendingMigrationAdvisor\MigrationAdvisor'];
+                        $migrationAdvisor->modifyResponse($request, $response);
+                    }
+                );
+            }
 
 	}
 
@@ -39,9 +45,11 @@ class PendingMigrationAdvisorServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register()
-	{
-		$this->app['config']->package('cmarfil/pending-migration-advisor', __DIR__.'/../../config', 'cmarfil/pending-migration-advisor');
+	public function register(){
+            
+            $configPath = __DIR__.'/../../config/config.php';
+            $this->mergeConfigFrom($configPath, 'pending-migration-advisor');
+            //$this->app['config']->package('cmarfil/pending-migration-advisor', __DIR__.'/../../config', 'cmarfil/pending-migration-advisor');
 	}
 
 	/**

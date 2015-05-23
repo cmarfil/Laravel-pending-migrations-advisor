@@ -4,7 +4,7 @@ return array(
     /**
      * The migrations path
      */
-    'migrations_path' =>  app_path().'/database/migrations',
+    'migrations_path' =>  base_path().'/database/migrations',
     /**
      * Turn off the advisor
      */
