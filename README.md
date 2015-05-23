@@ -7,10 +7,10 @@ Simple Laravel pending migrations advisor, display a warning popup when are pend
 ### For Laravel 4, please use the [L4 branch](https://github.com/cmarfil/Laravel-pending-migrations-advisor/tree/L4)!
 
 ## Installation
-1. Begin by installing this package through Composer. Edit your project's composer.json file to require cmarfil/pending-migration-advisor.
+1. Begin by installing this package through Composer. Edit your project's composer.json file to require-dev cmarfil/pending-migration-advisor.
 
 	```php
-	"require": {
+	"require-dev": {
 		"cmarfil/pending-migration-advisor": ">=1.1"
 	}
 	```
@@ -25,11 +25,11 @@ Simple Laravel pending migrations advisor, display a warning popup when are pend
   ```
 
 ## Configuration
-Open `app/config/packages/cmarfil/pending-migration-advisor/config.php` to adjust package configuration.
+Open `app/config/pending-migration-advisor.php` to adjust package configuration.
 If this file doesn't exist, run:
 
 ```console
-php artisan config:publish cmarfil/pending-migration-advisor` to create the default configuration file.
+php artisan vendor:publish --provider="Cmarfil\PendingMigrationAdvisor\PendingMigrationAdvisorServiceProvider"
 ```
 
 ```php
