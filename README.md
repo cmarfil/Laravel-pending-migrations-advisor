@@ -1,15 +1,20 @@
-# Laravel pending migration advisor
+# Laravel 5 pending migration advisor
+
+### For Laravel 4, please use the [L4 branch](https://github.com/cmarfil/Laravel-pending-migrations-advisor/tree/L4)!
+
 Simple Laravel pending migrations advisor, display a warning popup when are pending migrations to run.
 
 ![alt tag](http://i60.tinypic.com/33l2t0o.jpg)
 
 ## Installation
 1. Begin by installing this package through Composer. Edit your project's composer.json file to require cmarfil/pending-migration-advisor.
-	```
+
+	```php
 	"require": {
-		"cmarfil/pending-migration-advisor": "~1.0"
+		"cmarfil/pending-migration-advisor": ">=1.1"
 	}
 	```
+
 2. Add `'Cmarfil\PendingMigrationAdvisor\PendingMigrationAdvisorServiceProvider'` to `providers` in `app/config/app.php`.
 
   ```php
@@ -21,14 +26,18 @@ Simple Laravel pending migrations advisor, display a warning popup when are pend
 
 ## Configuration
 Open `app/config/packages/cmarfil/pending-migration-advisor/config.php` to adjust package configuration.
-If this file doesn't exist, run `php artisan config:publish cmarfil/pending-migration-advisor` to create the default configuration file.
+If this file doesn't exist, run:
+
+```console
+php artisan config:publish cmarfil/pending-migration-advisor` to create the default configuration file.
+```
 
 ```php
 return array(
     /**
      * The migrations path
      */
-    'migrations_path' =>  app_path().'/database/migrations',
+    'migrations_path' =>  base_path().'/database/migrations',
     /**
      * Turn off the advisor
      */
@@ -37,7 +46,7 @@ return array(
 ```
 
 #### Migrations path
-Specify the migrations path ( normally app/database/migrations )
+Specify the migrations path ( normally database/migrations )
 
 #### Enabled
 Enable or disable the advisor
